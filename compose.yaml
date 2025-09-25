@@ -1,0 +1,5 @@
+services:
+  cat_msg:
+    build: ./image
+    volumes:
+      - ./msg.txt:/opt/msg.txt
