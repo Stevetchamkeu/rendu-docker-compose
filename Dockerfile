@@ -1,3 +1,7 @@
-FROM debian:latest
-ADD msg.txt /opt/msg.txt
-CMD ["/bin/cat", "/opt/msg.txt"]
+FROM node:18-alpine
+WORKDIR /app
+COPY package.json .
+RUN npm install
+COPY src/ ./src/
+EXPOSE 3030
+CMD ["npm", "start"]

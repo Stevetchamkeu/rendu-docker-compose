@@ -1,5 +1,6 @@
 services:
-  cat_msg:
+  node_server:
     build: ./image
-    volumes:
-      - ./msg.txt:/opt/msg.txt
+    ports:
+      - "127.0.0.1:3030:3030"
+    restart: unless-stopped
